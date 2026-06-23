@@ -1,0 +1,57 @@
+[data-state] {
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,.1);
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+[data-state]:hover:not(:disabled) { filter: brightness(1.08); }
+
+[data-state="free"]         { background: #d8f3dc; color: #1b4332; border-color: #b7e4c7; }
+[data-state="free-premium"] { background: #dbeafe; color: #1e3a5f; border-color: #bfdbfe; }
+[data-state="taken"]        { background: #e9e9e9; color: #999;    border-color: #d5d5d5; cursor: not-allowed; }
+[data-state="too-early"]    { background: #fde8d0; color: #7a3b00; border-color: #f9c89a; cursor: not-allowed; }
+[data-state="mine"]         { background: #198754; color: #fff;    border-color: #146c43; }
+[data-state="selected"]     { background: #52b788; color: #fff;    border-color: #2d6a4f; }
+[data-state="editing-kept"] { background: #0d6efd; color: #fff;    border-color: #0a58ca; }
+
+.theatre-row {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 3px;
+}
+.theatre-row-label {
+    width: 1.4rem;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6c757d;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Badge colours for reservation panel */
+.badge-premium {
+    background-color: #dbeafe;
+    color: #1e3a5f;
+}
+.badge-normal {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+/* Legend dots — small filled circles */
+.legend {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+    border: 1px solid rgba(0,0,0,0.12);
+}
