@@ -30,8 +30,8 @@ function TotpLayout({ totpVerify, logOut }) {
                                     onChange={e => setCode(e.target.value.replace(/\D/g, ''))} />
                             </Form.Group>
                             <div>
-                                <Button type="submit" variant="success">Verify</Button>
-                                <Button onClick={logOut}>
+                                <Button type='submit'>Verify</Button>
+                                <Button onClick={logOut} className='mx-1'>
                                     Cancel and logout
                                 </Button>
                             </div>

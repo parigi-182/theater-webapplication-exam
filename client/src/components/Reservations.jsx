@@ -36,7 +36,7 @@ function SelectionPanel({ seats, selectedSeats, myReservation, editingId, editin
     }
 
     return (
-        <Card>
+        <Card className="mx-2">
             <Card.Body>
                 {tooEarlyCount > 0 && (
                     <span>
@@ -46,18 +46,19 @@ function SelectionPanel({ seats, selectedSeats, myReservation, editingId, editin
                 {selectedCount === 0
                     ? <span>Click seats on the map to select them.</span>
                     : <>
-                        <span>
-                            <strong>{selectedCount}</strong> selected:{' '}
-                            {selectedInfo.map(s => `${s.row_label}${s.seat_num}`).join(', ')}
-                        </span>
                         {loggedIn
                             ? <Button variant="success" onClick={onReserve}>
                                 Reserve {selectedCount} seat(s)
                               </Button>
-                            : <Button variant="success" onClick={()=>{navigate('/login');}}>
+                            : <Button className="mx-1" onClick={()=>{navigate('/login');}}>
                                 Log in to reserve {selectedCount} seat(s)
                               </Button>
                         }
+                        <span>
+                            <strong>{}</strong> selected:{' '}
+                            {selectedInfo.map(s => `${s.row_label}${s.seat_num}`).join(', ')}
+                        </span>
+                        {/* <span> <Button variant="" onClick={()=>{navigate('/');} } ><u>Cancel</u ></Button></span> */}
                     </>
                 }
             </Card.Body>
@@ -67,7 +68,7 @@ function SelectionPanel({ seats, selectedSeats, myReservation, editingId, editin
 
 function AdminPanel({ reservations, onEdit, onDelete }) {
     return (
-        <Card>
+        <Card className="mx-2">
             <Card.Header>
                 All Reservations {reservations.length > 0 && <Badge bg="secondary" className="ms-1">{reservations.length}</Badge>}
             </Card.Header>
@@ -90,8 +91,8 @@ function AdminPanel({ reservations, onEdit, onDelete }) {
                                 </td>
                                 <td>
                                     <div>
-                                        <Button variant="success" onClick={() => onEdit(r)}>Edit</Button>
-                                        <Button onClick={() => onDelete(r.id)}>Delete</Button>
+                                        <Button onClick={() => onEdit(r)}>Edit</Button>
+                                        <Button className="mx-1"onClick={() => onDelete(r.id)}>Delete</Button>
                                     </div>
                                 </td>
                             </tr>
